@@ -1,0 +1,24 @@
+#header div {
+	margin: 5px;
+}
+
+#logo {
+	float: left;
+}
+
+#logout, #upload, #menuButton, #search {
+	float: right;
+}
+
+#search {
+	width: 20%;
+}
+
+#upload, #menuButton, #logout, #search {
+	border: none;
+}
+
+#search input {
+	width: 100%;
+	float: left;
+}

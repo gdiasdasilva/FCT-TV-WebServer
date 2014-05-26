@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>WebServer</title>
+  <%= stylesheet_link_tag 'application' %>
+  <%= stylesheet_link_tag 'general' %>
+  <%= stylesheet_link_tag 'header' %>
+  <%= stylesheet_link_tag 'nav-bar' %>
+
+  <%= yield :css %>
+
+  <%= javascript_include_tag 'application' %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<div id="container">
+  <div id="header">
+    <div id="logo">Logo</div>
+    <div id="logout"><button type="button" class="btn btn-default"><strong>Terminar sessão</strong></button></div>
+    <div id="menuButton" class="btn-group">
+      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+        <span class="glyphicon glyphicon-cog"></span>
+      </button>
+      <ul class="dropdown-menu" role="menu">
+        <li><a href="#">Meus conteúdos</a></li>
+        <li><a href="#">Ajuda</a></li>
+        <li class="divider"></li>
+        <li><a href="#">Suporte</a></li>
+      </ul>
+    </div>
+    <div id="search">
+      <input type="text" class="form-control" placeholder="Pesquisa">
+    </div>
+    <div id="upload">
+      <button type="button" class="btn btn-default">Inserir conteúdo</button>
+    </div>
+  </div>
+
+  <div id="nav-bar">
+    <ul id="menu">
+      <li><a href="#">Ler mais tarde</a></li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Tópicos</a>
+        <ul class="dropdown-menu" role="menu">
+          <li><a href="#">Eventos</a></li>
+          <li><a href="#">Notícias FCT</a></li>
+          <li><a href="#">Avisos Pedagógicos</a></li>
+          <li><a href="#">Investigação e Trabalho</a></li>
+          <li><a href="#">Reportagens</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Agenda</a></li>
+      <li><a href="#">Ementas</a></li>
+    </ul>
+  </div>
+
+  <div id="content-box">
+    <%= yield %>
+  </div>
+
+  <div id="footer">
+    Footer
+  </div>
+</div>
+
+</body>
+</html>

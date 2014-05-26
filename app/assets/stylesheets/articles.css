@@ -1,0 +1,16 @@
+#article {
+}
+
+#article img {
+	width: 200px;
+	float: left;
+	margin-right: 10px;
+}
+
+#article p {
+	text-align: justify;
+}
+
+iframe {
+	margin-top: 15px;
+}

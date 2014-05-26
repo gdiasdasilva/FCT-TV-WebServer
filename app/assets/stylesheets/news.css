@@ -1,0 +1,35 @@
+#news .content-container {
+	height: 205px;
+	margin-bottom: 5px;
+	border-bottom: 1px solid #D0D0D0;
+}
+
+#news .content-image {
+	float: left;
+	width: 200px;
+	height: 150px;
+	/*border: none;*/
+}
+
+#news .content-text {
+	float: right;
+	width: 480px;
+	height: 150px;
+}
+
+#news .content-title {
+	
+}
+
+#news .content-description {
+	margin-top: 4px;
+}
+
+#news .content-image, .content-text {
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+#news {
+	height: 800px;
+}

@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @content.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @content.description %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @content.category_id %>
+</p>
+
+<p>
+  <strong>Video:</strong>
+  <%= @content.video %>
+</p>
+
+<p>
+  <strong>Limit date:</strong>
+  <%= @content.limit_date %>
+</p>
+
+<p>
+  <strong>Event site:</strong>
+  <%= @content.event_site %>
+</p>
+
+<p>
+  <strong>Event datetime:</strong>
+  <%= @content.event_datetime %>
+</p>
+
+<%= link_to 'Edit', edit_content_path(@content) %> |
+<%= link_to 'Back', contents_path %>

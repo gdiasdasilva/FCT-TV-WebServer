@@ -1,0 +1,31 @@
+<% content_for 'css' do
+  stylesheet_link_tag 'news'
+end %>
+
+<div id="news">
+
+  <% @contents.each do |content| %>
+      <div class="content-container">
+        <div class="content-title">
+          <h4><%= link_to content.title, content %></h4>
+        </div>
+        <div class="content-image">
+          <img src="http://www.fillmurray.com/200/150">
+        </div>
+        <div class="content-text">
+          <div class="content-type">
+            <span><a href="#"><%= get_category(content.category_id) %></a></span>
+          </div>
+          <div class="content-description">
+            <p>
+              <%= truncate(content.description, length: 330) %>
+            </p>
+          </div>
+        </div>
+      </div>
+  <% end %>
+</div>
+
+<hr>
+
+<%= link_to 'New Content', new_content_path %>

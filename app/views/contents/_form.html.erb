@@ -1,0 +1,56 @@
+<%= form_for(@content) do |f| %>
+  <% if @content.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@content.errors.count, "error") %> prohibited this content from being saved:</h2>
+
+      <ul>
+      <% @content.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <script>
+
+      $(document).ready(function() {
+          $('#button1').click(function() {
+              alert($("#content_category_id option:selected").val());
+          });
+      });
+
+  </script>
+
+    <div class="field" id="title">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field" id="description">
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </div>
+  <div class="field" id="category">
+    <%= f.label :category_id %><br>
+    <%- f.number_field :category_id -%>
+    <%= f.collection_select(:category_id, Category.all, :id, :name, :prompt => "Seleccione uma categoria...") %>
+  </div>
+  <div class="field" id="video">
+    <%= f.label :video %><br>
+    <%= f.text_field :video, placeholder: "Video URL" %>
+  </div>
+  <div class="field" id="limit_date">
+    <%= f.label :limit_date %><br>
+    <%= f.date_select :limit_date %>
+  </div>
+  <div class="field" id="event_site">
+    <%= f.label :event_site %><br>
+    <%= f.text_field :event_site %>
+  </div>
+  <div class="field" id="event_date">
+    <%= f.label :event_datetime %><br>
+    <%= f.datetime_select :event_datetime %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
