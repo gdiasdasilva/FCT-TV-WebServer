@@ -17,6 +17,10 @@ class CategoriesController < ApplicationController
     @category = Category.new
   end
 
+  def get_contents(id)
+    @contents = Category.find(id).contents
+  end
+
   # GET /categories/1/edit
   def edit
   end

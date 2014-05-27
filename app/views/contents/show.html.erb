@@ -1,39 +1,24 @@
-<p id="notice"><%= notice %></p>
+<div id="article">
+  <h3><%= @content.title %></h3>
 
-<p>
-  <strong>Title:</strong>
-  <%= @content.title %>
-</p>
+  <div id="article_metadata">
+    <span id="author">Margarida Borges</span><span> · </span>
+    <span id="pub_date"><%= @content.created_at %></span>
+    <span> · </span><%= link_to get_category(@content.category_id) %>
+  </div>
 
-<p>
-  <strong>Description:</strong>
-  <%= @content.description %>
-</p>
+  <hr>
 
-<p>
-  <strong>Category:</strong>
-  <%= @content.category_id %>
-</p>
+  <div id="article_content">
+    <img src="/assets/JCN.jpg" alt="Fotografia">
+    <p><%= @content.description %></p>
+  </div>
 
-<p>
-  <strong>Video:</strong>
-  <%= @content.video %>
-</p>
+  <% unless @content.video.blank? %>
+        <iframe width="420" height="345" src="<%= @content.video %>">
+        </iframe>
+  <% end %>
 
-<p>
-  <strong>Limit date:</strong>
-  <%= @content.limit_date %>
-</p>
-
-<p>
-  <strong>Event site:</strong>
-  <%= @content.event_site %>
-</p>
-
-<p>
-  <strong>Event datetime:</strong>
-  <%= @content.event_datetime %>
-</p>
-
-<%= link_to 'Edit', edit_content_path(@content) %> |
-<%= link_to 'Back', contents_path %>
+  <hr>
+  <span class="glyphicon glyphicon-tag"></span> Desporto, raquetes
+</div>

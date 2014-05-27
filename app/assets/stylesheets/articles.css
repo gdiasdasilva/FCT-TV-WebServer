@@ -14,3 +14,30 @@
 iframe {
 	margin-top: 15px;
 }
+
+#article hr {
+    margin-top: 20px;
+}
+
+#article #pub_date {
+    color: grey;
+}
+
+#article #author {
+    text-transform: uppercase;
+}
+
+#article #article_metadata {
+    margin-bottom: 10px;
+}
+
+#article #article_content {
+    overflow: auto;
+}
+
+#article iframe {
+    display: block;
+    width: 420px;
+    height: 345px;
+    margin: 0 auto;
+}

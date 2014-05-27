@@ -18,12 +18,13 @@ end %>
           </div>
           <div class="content-description">
             <p>
-              <%= truncate(content.description, length: 330) %>
+              <%= truncate(content.description, length: 330, omission: '... '){ link_to "Ler mais", content } %>
             </p>
           </div>
         </div>
       </div>
   <% end %>
+
 </div>
 
 <hr>
