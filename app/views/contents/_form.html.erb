@@ -51,14 +51,6 @@
 
   </script>
 
-    <div class="btn-group" data-toggle="buttons">
-      <button type="button" class="btn btn-primary">Eventos</button>
-      <button type="button" class="btn btn-primary">Notícias FCT</button>
-      <button type="button" class="btn btn-primary">Anúncios Pedagógicos</button>
-      <button type="button" class="btn btn-primary">Investigação e Trabalho</button>
-      <button type="button" class="btn btn-primary">Reportagens</button>
-    </div>
-
   <div class="field" id="category">
     <%= f.collection_select(:category_id, Category.all, :id, :name) %>
   </div>

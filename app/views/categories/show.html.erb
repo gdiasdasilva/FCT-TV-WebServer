@@ -1,9 +1,27 @@
-<p id="notice"><%= notice %></p>
+<div id="news">
 
-<p>
-  <strong>Name:</strong>
-  <%= @category.name %>
-</p>
+  <h1><%= @category.name %></h1>
+  <hr>
 
-<%= link_to 'Edit', edit_category_path(@category) %> |
-<%= link_to 'Back', categories_path %>
+  <% @category.contents.each do |content| %>
+      <div class="content-container">
+        <div class="content-title">
+          <h4><%= link_to content.title, content %></h4>
+        </div>
+        <div class="content-image">
+          <img src="http://www.fillmurray.com/200/150">
+        </div>
+        <div class="content-text">
+          <div class="content-type">
+            <span><a href="<%= category_path(content.category_id) %>"><%= @category.name %></a></span>
+          </div>
+          <div class="content-description">
+            <p>
+              <%= truncate(content.description.html_safe, length: 330, omission: '... '){ link_to "Ler mais", content } %>
+            </p>
+          </div>
+        </div>
+      </div>
+  <% end %>
+
+</div>

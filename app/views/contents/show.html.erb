@@ -4,7 +4,7 @@
   <div id="article_metadata">
     <span id="author">Margarida Borges</span><span> · </span>
     <span id="pub_date"><%= @content.created_at %></span>
-    <span> · </span><%= link_to get_category(@content.category_id) %>
+    <span> · </span><%= link_to get_category(@content.category_id), category_path(@content.category_id) %>
   </div>
 
   <hr>

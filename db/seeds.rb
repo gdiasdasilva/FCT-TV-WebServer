@@ -23,12 +23,5 @@ Um sistema de inovação eficiente e eficaz requer também uma articulação ent
 A apresentação abordará estas questões, utilizando como exemplo ilustrativo o trabalho desenvolvido no âmbito da Plataforma Tecnológica MANUFUTURE e das suas iniciativas, a nível europeu e nacional.",
                category_id: "2", video: "https://www.youtube.com/v/watch?v=cDDrB7XmUjA")
 
-
-
-
-
-
-
-
-
-Content.create(title: "Professora Ana Lobo distinguida pela 'Royal Society of Chemistry' de Londres", description: "Antigo estudante do Mestrado Integrado em Engenharia Civil - Perfil de Geotecnia, Gonçalo Faustino, foi distinguido com o Prémio Jovens Geotécnicos em Língua Inglesa da Sociedade Portuguesa de Geotecnia (SPG). O prémio é atribuído anualmente pela SPG. O concurso consiste num artigo submetido para o efeito, avaliado por um júri", category_id: "2")
+Content.create(title: "Professora Ana Lobo distinguida pela 'Royal Society of Chemistry' de Londres",
+               description: "Antigo estudante do Mestrado Integrado em Engenharia Civil - Perfil de Geotecnia, Gonçalo Faustino, foi distinguido com o Prémio Jovens Geotécnicos em Língua Inglesa da Sociedade Portuguesa de Geotecnia (SPG). O prémio é atribuído anualmente pela SPG. O concurso consiste num artigo submetido para o efeito, avaliado por um júri", category_id: "2")

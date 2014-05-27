@@ -41,13 +41,13 @@
     <ul id="menu">
       <li><a href="#">Ler mais tarde</a></li>
       <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Tópicos</a>
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Categorias</a>
         <ul class="dropdown-menu" role="menu">
-          <li><a href="#">Eventos</a></li>
-          <li><a href="#">Notícias FCT</a></li>
-          <li><a href="#">Avisos Pedagógicos</a></li>
-          <li><a href="#">Investigação e Trabalho</a></li>
-          <li><a href="#">Reportagens</a></li>
+          <li><a href="<%= category_path(Category.find_by_name("Eventos")) %>">Eventos</a></li>
+          <li><a href="<%= category_path(Category.find_by_name("Notícias FCT")) %>">Notícias FCT</a></li>
+          <li><a href="<%= category_path(Category.find_by_name("Avisos Pedagógicos")) %>">Avisos Pedagógicos</a></li>
+          <li><a href="<%= category_path(Category.find_by_name("Investigação e Trabalho")) %>">Investigação e Trabalho</a></li>
+          <li><a href="<%= category_path(Category.find_by_name("Reportagens")) %>">Reportagens</a></li>
         </ul>
       </li>
       <li><a href="#">Agenda</a></li>

@@ -17,8 +17,8 @@
 	height: 150px;
 }
 
-#news .content-title {
-	
+#news .content-title a {
+	color: black;
 }
 
 #news .content-description {
