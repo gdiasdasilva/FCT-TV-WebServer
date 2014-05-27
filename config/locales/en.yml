@@ -21,3 +21,39 @@
 
 en:
   hello: "Hello world"
+  datetime:
+    distance_in_words:
+      half_a_minute: "há meio minuto"
+      less_than_x_seconds:
+        one:   "há menos de 1 segundo" # default was: "less than 1 second"
+        other: "há menos de %{count} segundos" # default was: "less than %{count} seconds"
+      x_seconds:
+        one:   "há 1 segundo"
+        other: "há %{count} segundos"
+      less_than_x_minutes:
+        one:   "há menos de um minuto" # default was: "less than a minute"
+        other: "há menos de %{count} minutos" # default was: "less than %{count} minutes"
+      x_minutes:
+        one:   "há 1 minuto"
+        other: "há %{count} minutos"
+      about_x_hours:
+        one:   "há 1 hora" # default was: "about 1 hour"
+        other: "há %{count} horas" # default was: "about %{count} hours"
+      x_days:
+        one:   "há 1 dia"
+        other: "há %{count} dias"
+      about_x_months:
+        one:   "há 1 mês" # default was: "about 1 month"
+        other: "há %{count} meses" # default was: "about %{count} months"
+      x_months:
+        one:   "há 1 mês"
+        other: "há %{count} meses"
+      about_x_years:
+        one:   "há 1 ano" # default was: "about 1 year"
+        other: "há %{count} anos" # default was: "about %{count} years"
+      over_x_years:
+        one:   "há mais de 1 ano" # default was: "over 1 year"
+        other: "hà %{count} anos" # default was: "over %{count} years"
+      almost_x_years:
+        one:   "quase há 1 ano" # default was: "almost 1 year"
+        other: "quase há %{count} anos" # default was: "almost %{count} years"

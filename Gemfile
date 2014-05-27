@@ -18,6 +18,8 @@ gem 'acts-as-taggable-on'
 
 gem 'bluecloth'
 
+gem 'devise'
+
 group :development do
   gem 'better_errors'
 end

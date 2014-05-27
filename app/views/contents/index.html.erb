@@ -1,16 +1,17 @@
 <div id="news">
-
   <% @contents.each do |content| %>
       <div class="content-container">
         <div class="content-title">
           <h4><%= link_to content.title, content %></h4>
         </div>
         <div class="content-image">
-          <img src="http://www.fillmurray.com/200/150">
+          <img src="http://www.fillmurray.com/100/200">
         </div>
         <div class="content-text">
           <div class="content-type">
             <span><a href="<%= category_path(content.category_id) %>"><%= get_category(content.category_id) %></a></span>
+            <span> · </span>
+            <span id="pub_date"><%= time_ago_in_words(content.created_at) %></span>
           </div>
           <div class="content-description">
             <p>
@@ -20,7 +21,4 @@
         </div>
       </div>
   <% end %>
-
 </div>
-
-<%= link_to 'New Content', new_content_path %>

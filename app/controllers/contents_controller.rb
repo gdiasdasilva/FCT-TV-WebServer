@@ -4,7 +4,13 @@ class ContentsController < ApplicationController
   # GET /contents
   # GET /contents.json
   def index
-    @contents = Content.all
+    #@contents = Content.all
+
+    #if params[:search]
+     # @contents = Content.search(params[:search]).order("created_at DESC")
+   # else
+      @contents = Content.all.order('created_at DESC')
+   # end
   end
 
   # GET /contents/1
@@ -23,6 +29,12 @@ class ContentsController < ApplicationController
 
   helper_method :get_category
 
+  def get_author(id)
+    @name = User.find(id).name
+  end
+
+  helper_method :get_author
+
   # GET /contents/1/edit
   def edit
   end
@@ -32,6 +44,7 @@ class ContentsController < ApplicationController
   def create
     @content = Content.new(content_params)
     @content.description = BlueCloth.new(@content.description).to_html
+    @content.user_id = current_user
 
     respond_to do |format|
       if @content.save

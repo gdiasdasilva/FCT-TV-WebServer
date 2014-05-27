@@ -17,7 +17,13 @@
 <div id="container">
   <div id="header">
     <div id="logo">Logo</div>
-    <div id="logout"><button type="button" class="btn btn-default"><strong>Terminar sessão</strong></button></div>
+    <div id="logout">
+      <% if user_signed_in? %>
+            <%= link_to('Terminar sessão', destroy_user_session_path, :method => :delete, :class => "btn btn-default") %>
+      <% else %>
+            <%= link_to('Iniciar sessão', new_user_session_path, :class => "btn btn-default")  %>
+      <% end %>
+    </div>
     <div id="menuButton" class="btn-group">
       <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
         <span class="glyphicon glyphicon-cog"></span>
@@ -33,7 +39,7 @@
       <input type="text" class="form-control" placeholder="Pesquisa">
     </div>
     <div id="upload">
-      <button type="button" class="btn btn-default">Inserir conteúdo</button>
+      <%= link_to('Inserir conteúdo', new_content_path, :class => "btn btn-primary") %>
     </div>
   </div>
 

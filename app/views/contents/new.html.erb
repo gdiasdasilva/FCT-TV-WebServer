@@ -1,5 +1,18 @@
+<script>
+    window.setTimeout(function() {
+        $(".alert-info").fadeTo(500, 0).slideUp(500, function(){
+            $(this).remove();
+        });
+    }, 5000);
+</script>
+
 <h1>Adicionar conteúdo</h1>
 <hr>
+
+<div class="alert alert-info alert-dismissable">
+  <span class="close" data-dismiss="alert">×</span>
+  <span><strong>Atenção!</strong> Não se esqueça de atribuir uma categoria à sua publicação.</span>
+</div>
 
 <%= render 'form' %>
 <br>
