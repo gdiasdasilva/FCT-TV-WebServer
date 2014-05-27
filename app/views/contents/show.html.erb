@@ -11,7 +11,7 @@
 
   <div id="article_content">
     <img src="/assets/JCN.jpg" alt="Fotografia">
-    <p><%= @content.description %></p>
+    <p><%= @content.description.html_safe %></p>
   </div>
 
   <% unless @content.video.blank? %>

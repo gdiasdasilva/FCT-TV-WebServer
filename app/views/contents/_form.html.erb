@@ -1,3 +1,4 @@
+
 <%= form_for(@content) do |f| %>
   <% if @content.errors.any? %>
     <div id="error_explanation">
@@ -13,32 +14,68 @@
 
   <script>
 
-      $(document).ready(function() {
-          $('#button1').click(function() {
-              alert($("#content_category_id option:selected").val());
-          });
+      $(document).ready(function()
+      {
+          $("#limit_date").hide();
+
+              $("#content_category_id").change(
+                function()
+                {
+                    if($("#content_category_id").val() == 1)
+                    {
+                        $("#limit_date").hide();
+                        $("#event_date").show();
+                        $("#event_site").show();
+                    }
+                    else if($("#content_category_id").val() == 2 || $("#content_category_id").val() == 3)
+                    {
+                        $("#limit_date").hide();
+                        $("#event_date").hide();
+                        $("#event_site").hide();
+                    }
+                    else if($("#content_category_id").val() == 4)
+                    {
+                        $("#limit_date").show();
+                        $("#event_date").hide();
+                        $("#event_site").hide();
+                    }
+                    else if($("#content_category_id").val() == 5)
+                    {
+                        $("#limit_date").hide();
+                        $("#event_date").hide();
+                        $("#event_site").hide();
+                    }
+                }
+              )
       });
 
   </script>
 
+    <div class="btn-group" data-toggle="buttons">
+      <button type="button" class="btn btn-primary">Eventos</button>
+      <button type="button" class="btn btn-primary">Notícias FCT</button>
+      <button type="button" class="btn btn-primary">Anúncios Pedagógicos</button>
+      <button type="button" class="btn btn-primary">Investigação e Trabalho</button>
+      <button type="button" class="btn btn-primary">Reportagens</button>
+    </div>
+
   <div class="field" id="category">
-    <br>
-    <%= f.collection_select(:category_id, Category.all, :id, :name, :prompt => "Seleccione uma categoria...") %>
+    <%= f.collection_select(:category_id, Category.all, :id, :name) %>
   </div>
 
   <div class="field" id="title">
     <br>
-    <%= f.text_field :title, :placeholder => "Título" %>
+    <%= f.text_field :title, :placeholder => "Título", :class => "form-control" %>
   </div>
 
   <div class="field" id="description">
     <br>
-    <%= f.text_area :description, 'data-provide'=>'markdown', :rows => "10", :name => "content", :placeholder => "Texto" %>
+    <%= f.text_area :description, 'data-provide'=>'markdown', :rows => "10", :placeholder => "Texto" %>
   </div>
 
   <div class="field" id="video">
     <br>
-    <%= f.text_field :video, placeholder: "Video URL" %>
+    <%= f.text_field :video, placeholder: "Video URL", :class => "form-control" %>
   </div>
 
   <div class="field" id="limit_date">
@@ -49,7 +86,7 @@
 
   <div class="field" id="event_site">
     <br>
-    <%= f.text_field :event_site, :placeholder => "Local do evento" %>
+    <%= f.text_field :event_site, :placeholder => "Local do evento", :class => "form-control" %>
   </div>
 
   <div class="field" id="event_date">
@@ -60,7 +97,7 @@
 
   <div class="actions">
     <br>
-    <%= f.submit "Submeter" %>
+    <%= f.submit "Submeter", :class => "btn btn-default" %>
   </div>
 
 <% end %>

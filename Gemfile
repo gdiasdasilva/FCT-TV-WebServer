@@ -16,6 +16,8 @@ gem 'coffee-rails', '~> 4.0.0'
 
 gem 'acts-as-taggable-on'
 
+gem 'bluecloth'
+
 group :development do
   gem 'better_errors'
 end

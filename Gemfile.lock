@@ -34,6 +34,7 @@ GEM
     better_errors (1.1.0)
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
+    bluecloth (2.2.0)
     builder (3.2.2)
     coderay (1.1.0)
     coffee-rails (4.0.1)
@@ -122,6 +123,7 @@ PLATFORMS
 DEPENDENCIES
   acts-as-taggable-on
   better_errors
+  bluecloth
   coffee-rails (~> 4.0.0)
   jbuilder (~> 2.0)
   jquery-rails
