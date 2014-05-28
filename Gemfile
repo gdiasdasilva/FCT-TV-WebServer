@@ -22,9 +22,9 @@ gem 'devise'
 
 gem 'truncate_html'
 
-#gem 'paperclip", "~> 4.1'
+gem "select2-rails"
 
-gem 'acts-as-taggable-on'
+#gem 'paperclip", "~> 4.1'
 
 group :development do
   gem 'better_errors'

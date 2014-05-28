@@ -47,6 +47,10 @@
                     }
                 }
               )
+
+          $(function() {
+              $('.input-row').select2({tags:["fct/unl", "campustv", "informatica"], tokenSeparators: [",", " "]})
+          });
       });
 
   </script>
@@ -89,7 +93,7 @@
 
   <div class="field" id="tags">
   <br>
-    <%= f.text_field :tag_list, :class => "form-control", :placeholder => "Tags - (separadas por vírgulas)" %>
+    <%= f.text_field :tag_list, :class => "form-control input-row", :placeholder => "Tags" %>
   </div>
 
   <div class="actions">

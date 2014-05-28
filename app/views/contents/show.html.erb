@@ -19,6 +19,13 @@
         </iframe>
   <% end %>
 
+  <% unless @content.event_datetime.blank? %>
+      <h5>Data: <%= @content.event_datetime %></h5>
+  <% end %>
+  <% unless @content.event_site.blank? %>
+      <h5>Local: <%= @content.event_site %></h5>
+  <% end %>
+
   <hr>
   <span><%= link_to 'Voltar', contents_path %></span><span> · </span>
   <span class="glyphicon glyphicon-tag">
