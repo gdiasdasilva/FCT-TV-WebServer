@@ -1,5 +1,6 @@
 class ContentsController < ApplicationController
   before_action :set_content, only: [:show, :edit, :update, :destroy]
+  before_filter :authenticate_user!, :except => [:show, :index]
 
   # GET /contents
   # GET /contents.json

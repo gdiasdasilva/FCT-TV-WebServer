@@ -31,8 +31,13 @@
         <div id="<%= content.__id__ %>" class="panel-collapse collapse">
           <div class="panel-body">
             <p><%= link_to 'Ver publicação', content_path(content) %></p>
-            <p><%= link_to 'Editar publicação', edit_content_path(content) %></p>
-            <p><%= link_to 'Apagar publicação', content, method: :delete, data: { confirm: 'Tem a certeza?' } %></p>
+
+            <% if content.presence_in(User.find(current_user).contents) %>
+                <p><%= link_to 'Editar publicação', edit_content_path(content) %></p>
+                <p><%= link_to 'Apagar publicação', content, method: :delete, data: { confirm: 'Tem a certeza?' } %></p>
+            <% else %>
+                <p><%= link_to 'Reportar publicação' %></p>
+          <% end %>
           </div>
         </div>
       </div>
