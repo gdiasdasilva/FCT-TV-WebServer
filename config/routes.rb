@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
    root 'contents#index'
    get '/calendar' => 'pages#calendar'
+   get 'tagged' => 'contents#tagged', :as => 'tagged'
 
 
   # Example of regular route:

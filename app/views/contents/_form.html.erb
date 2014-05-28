@@ -87,6 +87,11 @@
     <%= f.datetime_select :event_datetime %>
   </div>
 
+  <div class="field" id="tags">
+    <%= f.label :tags %>
+    <%= f.text_field :tag_list %>
+  </div>
+
   <div class="actions">
     <br>
     <%= f.submit "Submeter", :class => "btn btn-default" %>

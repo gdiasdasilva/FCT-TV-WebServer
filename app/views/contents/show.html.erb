@@ -20,5 +20,11 @@
   <% end %>
 
   <hr>
-  <span><%= link_to 'Voltar', contents_path %></span><span> · </span><span class="glyphicon glyphicon-tag"></span> Desporto, raquetes
+  <span><%= link_to 'Voltar', contents_path %></span><span> · </span>
+  <span class="glyphicon glyphicon-tag">
+    <% @content.tags.any? %>
+    <% @content.tags.each do |tag| %>
+  <%= link_to tag.name, tagged_url(:tag => tag.name) %>
+<% end %>
+  </span>
 </div>

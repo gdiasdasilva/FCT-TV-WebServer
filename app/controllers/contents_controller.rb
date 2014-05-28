@@ -35,6 +35,14 @@ class ContentsController < ApplicationController
 
   helper_method :get_author
 
+  def tagged
+    if params[:tag].present?
+      @contents = Content.tagged_with(params[:tag])
+    else
+      @contents = Content.all
+    end
+  end
+
   # GET /contents/1/edit
   def edit
   end
@@ -89,6 +97,6 @@ class ContentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def content_params
-      params.require(:content).permit(:title, :description, :category_id, :video, :limit_date, :event_site, :event_datetime)
+      params.require(:content).permit(:title, :description, :category_id, :video, :limit_date, :event_site, :event_datetime, :tag_list)
     end
 end
