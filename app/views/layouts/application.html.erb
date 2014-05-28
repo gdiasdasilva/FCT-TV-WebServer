@@ -56,7 +56,7 @@
           <li><a href="<%= category_path(Category.find_by_name("Reportagens")) %>">Reportagens</a></li>
         </ul>
       </li>
-      <li><a href="#">Agenda</a></li>
+      <li><%= link_to('Agenda', calendar_path) %></li>
       <li><a href="#">Ementas</a></li>
     </ul>
   </div>
