@@ -10,7 +10,7 @@
   <hr>
 
   <div id="article_content">
-    <img src="/assets/JCN.jpg" alt="Fotografia">
+    <!-- <img src="/assets/JCN.jpg" alt="Fotografia"> -->
     <%= @content.description.html_safe %>
   </div>
 
@@ -25,10 +25,13 @@
   <% unless @content.event_site.blank? %>
       <h5>Local: <%= @content.event_site %></h5>
   <% end %>
+  <% unless @content.limit_date.blank? %>
+      <h5>Data limite: <%= @content.limit_date %></h5>
+  <% end %>
 
   <hr>
   <span><%= link_to 'Voltar', contents_path %></span><span> · </span>
-  <span class="glyphicon glyphicon-tag">
+  <span class="glyphicon glyphicon-tags">
     <% @content.tags.any? %>
     <% @content.tags.each do |tag| %>
   <%= link_to tag.name, tagged_url(:tag => tag.name) %>

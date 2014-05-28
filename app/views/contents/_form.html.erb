@@ -18,6 +18,31 @@
       {
           $("#limit_date").hide();
 
+          if($("#content_category_id").val() == 1)
+          {
+              $("#limit_date").hide();
+              $("#event_date").show();
+              $("#event_site").show();
+          }
+          else if($("#content_category_id").val() == 2 || $("#content_category_id").val() == 3)
+          {
+              $("#limit_date").hide();
+              $("#event_date").hide();
+              $("#event_site").hide();
+          }
+          else if($("#content_category_id").val() == 4)
+          {
+              $("#limit_date").show();
+              $("#event_date").hide();
+              $("#event_site").hide();
+          }
+          else if($("#content_category_id").val() == 5)
+          {
+              $("#limit_date").hide();
+              $("#event_date").hide();
+              $("#event_site").hide();
+          }
+
               $("#content_category_id").change(
                 function()
                 {
@@ -83,7 +108,7 @@
     <div class="field" id="event_date">
       <br>
       <strong>Data: </strong>
-      <%= f.datetime_select :event_datetime %>
+      <%= f.datetime_select :event_datetime, :include_blank => true %>
     </div>
 
   <div class="field" id="event_site">
