@@ -1,2 +1,47 @@
+<h2><%= @user.name %></h2>
+<hr>
 
-<%= @user.email %>
+<p>
+  <strong>Função: </strong>
+  <% if @user.is_teacher %>
+      <%= "Professor" %>
+  <% else %>
+      <%= "Aluno" %>
+  <% end %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @user.email %>
+</p>
+
+<h3>Conteúdos</h3>
+
+<% @user.contents.each do |content| %>
+
+    <div class="panel-group" id="accordion">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion" href="#<%= content.__id__ %>">
+              <%= content.title %>
+            </a>
+          </h4>
+        </div>
+        <div id="<%= content.__id__ %>" class="panel-collapse collapse">
+          <div class="panel-body">
+            <p><%= link_to 'Ver publicação', content_path(content) %></p>
+            <p><%= link_to 'Editar publicação', edit_content_path(content) %></p>
+            <p><%= link_to 'Apagar publicação', content, method: :delete, data: { confirm: 'Tem a certeza?' } %></p>
+          </div>
+        </div>
+      </div>
+    </div>
+<% end %>
+
+<%= link_to 'Back', users_path %>
+
+
+
+
+

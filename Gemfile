@@ -22,6 +22,10 @@ gem 'devise'
 
 gem 'truncate_html'
 
+#gem 'paperclip", "~> 4.1'
+
+gem 'acts-as-taggable-on'
+
 group :development do
   gem 'better_errors'
 end
