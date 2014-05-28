@@ -76,20 +76,20 @@
     <%= f.date_select :limit_date %>
   </div>
 
+    <div class="field" id="event_date">
+      <br>
+      <strong>Data: </strong>
+      <%= f.datetime_select :event_datetime %>
+    </div>
+
   <div class="field" id="event_site">
     <br>
     <%= f.text_field :event_site, :placeholder => "Local do evento", :class => "form-control" %>
   </div>
 
-  <div class="field" id="event_date">
-    <br>
-    <strong>Data: </strong>
-    <%= f.datetime_select :event_datetime %>
-  </div>
-
   <div class="field" id="tags">
-    <%= f.label :tags %>
-    <%= f.text_field :tag_list %>
+  <br>
+    <%= f.text_field :tag_list, :class => "form-control", :placeholder => "Tags - (separadas por vírgulas)" %>
   </div>
 
   <div class="actions">
