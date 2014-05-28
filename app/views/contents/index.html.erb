@@ -2,10 +2,10 @@
   <% @contents.each do |content| %>
       <div class="content-container">
         <div class="content-title">
-          <h4><%= link_to content.title, content %></h4>
+          <h4><%= link_to truncate(content.title, length: 80, omission: '... '), content %></h4>
         </div>
         <div class="content-image">
-          <img src="http://www.fillmurray.com/100/200">
+          <img src="/assets/DevDays.jpg">
         </div>
         <div class="content-text">
           <div class="content-type">
@@ -15,7 +15,7 @@
           </div>
           <div class="content-description">
             <p>
-              <%= truncate(content.description.html_safe, length: 330, omission: '... '){ link_to "Ler mais", content } %>
+              <%= truncate_html(content.description.html_safe, length: 300, omission: '... ') %>
             </p>
           </div>
         </div>

@@ -11,7 +11,7 @@
 
   <div id="article_content">
     <img src="/assets/JCN.jpg" alt="Fotografia">
-    <p><%= @content.description.html_safe %></p>
+    <%= @content.description.html_safe %>
   </div>
 
   <% unless @content.video.blank? %>
@@ -20,5 +20,5 @@
   <% end %>
 
   <hr>
-  <span class="glyphicon glyphicon-tag"></span> Desporto, raquetes
+  <span><%= link_to 'Voltar', contents_path %></span><span> · </span><span class="glyphicon glyphicon-tag"></span> Desporto, raquetes
 </div>

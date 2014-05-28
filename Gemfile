@@ -20,6 +20,8 @@ gem 'bluecloth'
 
 gem 'devise'
 
+gem 'truncate_html'
+
 group :development do
   gem 'better_errors'
 end
