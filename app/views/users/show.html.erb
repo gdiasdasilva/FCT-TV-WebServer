@@ -17,7 +17,7 @@
 
 <h3>Conteúdos</h3>
 
-<% @user.contents.each do |content| %>
+<% @user.contents.order('created_at DESC').each do |content| %>
 
     <div class="panel-group" id="accordion">
       <div class="panel panel-default">

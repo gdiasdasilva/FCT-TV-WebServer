@@ -2,5 +2,11 @@
 
 <%= render 'form' %>
 
+<script>
+    $(document).ready(function() {
+        $("#content_category_id").hide();
+    })
+</script>
+
 <%= link_to 'Show', @content %> |
 <%= link_to 'Back', contents_path %>
