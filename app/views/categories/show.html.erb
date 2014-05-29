@@ -2,27 +2,32 @@
 
   <p class="lead"><%= @category.name %></p>
   <hr>
-  <% @category.contents.order('created_at DESC').each do |content| %>
-      <div class="content-container">
-        <div class="content-title">
-          <h4><%= link_to truncate(content.title, length: 80, omission: '... '), content %></h4>
-        </div>
-        <div class="content-image">
-          <img src="/assets/DevDays.jpg">
-        </div>
-        <div class="content-text">
-          <div class="content-type">
-            <span><a href="<%= category_path(content.category_id) %>"><%= @category.name %></a></span>
-            <span> · </span>
-            <span id="pub_date"><%= time_ago_in_words(content.created_at) %></span>
+  <% if @category.contents.length > 0 %>
+      <% @category.contents.order('created_at DESC').each do |content| %>
+          <div class="content-container">
+            <div class="content-title">
+              <h4><%= link_to truncate(content.title, length: 80, omission: '... '), content %></h4>
+            </div>
+            <div class="content-image">
+              <img src="/assets/DevDays.jpg">
+            </div>
+            <div class="content-text">
+              <div class="content-type">
+                <span><a href="<%= category_path(content.category_id) %>"><%= @category.name %></a></span>
+                <span> · </span>
+                <span id="pub_date"><%= time_ago_in_words(content.created_at) %></span>
+              </div>
+              <div class="content-description">
+                <p>
+                  <%= truncate_html(content.description.html_safe, length: 300, omission: '... '){ link_to "Ler mais", content } %>
+                </p>
+              </div>
+            </div>
           </div>
-          <div class="content-description">
-            <p>
-              <%= truncate_html(content.description.html_safe, length: 300, omission: '... '){ link_to "Ler mais", content } %>
-            </p>
-          </div>
-        </div>
+      <% end %>
+  <% else %>
+      <div class="alert alert-warning">
+        Não existem <strong><%= @category.name.downcase %></strong> para mostrar!
       </div>
-  <% end %>
-
+<%end %>
 </div>
