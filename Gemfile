@@ -26,6 +26,8 @@ gem "select2-rails"
 
 #gem 'paperclip", "~> 4.1'
 
+gem 'seed_dump'
+
 group :development do
   gem 'better_errors'
 end

@@ -32,12 +32,14 @@
           <div class="panel-body">
             <p><%= link_to 'Ver publicação', content_path(content) %></p>
 
-            <% if content.presence_in(User.find(current_user).contents) %>
-                <p><%= link_to 'Editar publicação', edit_content_path(content) %></p>
-                <p><%= link_to 'Apagar publicação', content, method: :delete, data: { confirm: 'Tem a certeza?' } %></p>
-            <% else %>
-                <p><%= link_to 'Reportar publicação' %></p>
-          <% end %>
+            <% unless current_user.blank? %>
+                <% if content.presence_in(User.find(current_user).contents) %>
+                    <p><%= link_to 'Editar publicação', edit_content_path(content) %></p>
+                    <p><%= link_to 'Apagar publicação', content, method: :delete, data: { confirm: 'Tem a certeza?' } %></p>
+                <% else %>
+                    <p><%= link_to 'Reportar publicação' %></p>
+                 <% end %>
+            <% end %>
           </div>
         </div>
       </div>
