@@ -1,6 +1,6 @@
 class ContentsController < ApplicationController
   before_action :set_content, only: [:show, :edit, :update, :destroy]
-  before_filter :authenticate_user!, :except => [:show, :index]
+  before_filter :authenticate_user!, :except => [:show, :index, :tagged]
 
   # GET /contents
   # GET /contents.json
@@ -13,6 +13,12 @@ class ContentsController < ApplicationController
       @contents = Content.all.order('created_at DESC')
    # end
   end
+
+  def get_events
+    @contents = Content.find_by_category_id(1)
+  end
+
+  helper_method :get_events
 
   # GET /contents/1
   # GET /contents/1.json

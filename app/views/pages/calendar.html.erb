@@ -2,13 +2,13 @@
     $( document ).ready( function() {
         $('.responsive-calendar').responsiveCalendar(
                 {
-                    time: '2013-05',
+                    time: '2014-05',
                     events: {
-                        "2013-04-30": {"number": 5, "badgeClass": "badge-warning", "url": "http://w3widgets.com/responsive-calendar"},
-                        "2013-04-26": {"number": 1, "badgeClass": "badge-warning", "url": "http://w3widgets.com"},
-                        "2013-05-03": {"number": 1, "badgeClass": "badge-error"},
-                        "2013-06-12": {"class": "active special"},
-                        "2013-06-23": {}
+                        "2014-04-30": {"number": 5, "badgeClass": "badge-warning", "url": "http://w3widgets.com/responsive-calendar"},
+                        "2014-05-26": {"number": 1, "badgeClass": "badge-warning", "url": "http://w3widgets.com"},
+                        "2014-05-03": {"number": 1, "badgeClass": "badge-error"},
+                        "2014-06-12": {"class": "active special"},
+                        "2014-05-23": {}
                     }
                 }
         );
@@ -36,3 +36,14 @@
   </div>
 </div>
 <!-- Responsive calendar - END -->
+
+<%= javascript_tag do %>
+    window.contentsURL = "<%=j contents_url %>";
+    var x = <%=raw Content.limit(2).to_json %>;
+    var events = '{ '
+    for(var i = 0; i < x.length; i++)
+    {
+    events += '"' + x[i].event_date + '": { "number": 15, "badgeClass": "badge-error" }';
+    }
+    events += ' }'
+<% end %>
