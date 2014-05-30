@@ -116,6 +116,12 @@
     <%= f.text_field :event_site, :placeholder => "Local do evento", :class => "form-control" %>
   </div>
 
+  <div class="field">
+    <br>
+    <strong>Imagem: </strong>
+    <%= f.file_field :image %>
+  </div>
+
   <div class="field" id="tags">
   <br>
     <%= f.text_field :tag_list, :class => "form-control input-row", :placeholder => "Tags" %>

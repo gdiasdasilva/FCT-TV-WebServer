@@ -24,9 +24,11 @@ gem 'truncate_html'
 
 gem "select2-rails"
 
-#gem 'paperclip", "~> 4.1'
-
 gem 'seed_dump'
+
+gem 'carrierwave'
+
+gem 'mini_magick'
 
 group :development do
   gem 'better_errors'

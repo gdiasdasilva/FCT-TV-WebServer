@@ -10,7 +10,7 @@
   <hr>
 
   <div id="article_content">
-    <!-- <img src="/assets/JCN.jpg" alt="Fotografia"> -->
+    <%= image_tag(@content.image) %>
     <%= @content.description.html_safe %>
   </div>
 

@@ -10,7 +10,7 @@
 
 #news .content-image img {
     min-width: 200px;
-    width: 200px;
+    max-width: 200px;
     max-height: 150px;
     min-height: 150px;
 }
@@ -37,4 +37,8 @@
 .content-text #pub_date
 {
     color: grey;
+}
+
+.hidden {
+    display: none;
 }

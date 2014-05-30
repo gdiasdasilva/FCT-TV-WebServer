@@ -6,6 +6,8 @@ class Content < ActiveRecord::Base
   validates :title, :presence => true
   validates :description, :presence => true
 
+  mount_uploader :image, ImageUploader
+
   def self.search(search)
     if search
       where 'description LIKE ?', "%#{search}%"
