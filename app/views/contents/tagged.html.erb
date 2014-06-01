@@ -7,7 +7,7 @@
           <h4 title="<%= content.title %>"><%= link_to truncate(content.title, length: 70, omission: '... '), content %></h4>
         </div>
         <div class="content-image">
-          <img src="/assets/DevDays.jpg">
+          <%= image_tag(content.image.url(:thumb)) %>
         </div>
         <div class="content-text">
           <div class="content-type">
