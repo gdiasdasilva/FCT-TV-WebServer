@@ -5,6 +5,7 @@
     <span id="author"><%= link_to get_author(@content.user_id), user_path(@content.user_id) %></span><span> · </span>
     <span id="pub_date"><%= @content.created_at %></span>
     <span> · </span><%= link_to get_category(@content.category_id), category_path(@content.category_id) %>
+
   </div>
 
   <hr>
@@ -30,11 +31,21 @@
   <% end %>
 
   <hr>
-  <span><%= link_to 'Voltar', contents_path %></span><span> · </span>
-  <span class="glyphicon glyphicon-tags">
-    <% @content.tags.any? %>
-    <% @content.tags.each do |tag| %>
+
+  <% if user_signed_in? %>
+      <% if current_user.liked? @content %>
+          <%= link_to "Não gosto", dislike_content_path(@content), method: :put %>
+      <% else %>
+          <%= link_to "Gosto", like_content_path(@content), method: :put %>
+      <% end %>
+      <span> · </span>
+  <% end %>
+  
+  <%= @content.get_likes.size %> pessoas gostaram disto
+  <br>
+  Tags:
+  <% @content.tags.any? %>
+  <% @content.tags.each do |tag| %>
   <%= link_to tag.name, tagged_url(:tag => tag.name) %>
 <% end %>
-  </span>
 </div>

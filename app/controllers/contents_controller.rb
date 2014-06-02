@@ -42,6 +42,18 @@ class ContentsController < ApplicationController
 
   helper_method :get_author
 
+  def like
+    @content = Content.find(params[:id])
+    @content.liked_by current_user
+    redirect_to @content
+  end
+
+  def dislike
+    @content = Content.find(params[:id])
+    @content.disliked_by current_user
+    redirect_to @content
+  end
+
   def tagged
     if params[:tag].present?
       @contents = Content.tagged_with(params[:tag])

@@ -30,6 +30,8 @@ gem 'carrierwave'
 
 gem 'mini_magick'
 
+gem 'acts_as_votable', '~> 0.9.0'
+
 group :development do
   gem 'better_errors'
 end

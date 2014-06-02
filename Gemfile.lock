@@ -30,6 +30,7 @@ GEM
     acts-as-taggable-on (3.2.3)
       actionpack (>= 3, < 5)
       activerecord (>= 3, < 5)
+    acts_as_votable (0.9.0)
     arel (5.0.1.20140414130214)
     bcrypt (3.1.7)
     better_errors (1.1.0)
@@ -146,6 +147,7 @@ PLATFORMS
 
 DEPENDENCIES
   acts-as-taggable-on
+  acts_as_votable (~> 0.9.0)
   better_errors
   bluecloth
   carrierwave

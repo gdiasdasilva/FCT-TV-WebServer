@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140529234641) do
+ActiveRecord::Schema.define(version: 20140602232116) do
 
   create_table "categories", force: true do |t|
     t.string   "name"
@@ -32,6 +32,17 @@ ActiveRecord::Schema.define(version: 20140529234641) do
     t.string   "user_id"
     t.string   "image"
   end
+
+  create_table "likes", force: true do |t|
+    t.string   "liker_type"
+    t.integer  "liker_id"
+    t.string   "likeable_type"
+    t.integer  "likeable_id"
+    t.datetime "created_at"
+  end
+
+  add_index "likes", ["likeable_id", "likeable_type"], name: "fk_likeables"
+  add_index "likes", ["liker_id", "liker_type"], name: "fk_likes"
 
   create_table "taggings", force: true do |t|
     t.integer  "tag_id"
@@ -71,5 +82,20 @@ ActiveRecord::Schema.define(version: 20140529234641) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+
+  create_table "votes", force: true do |t|
+    t.integer  "votable_id"
+    t.string   "votable_type"
+    t.integer  "voter_id"
+    t.string   "voter_type"
+    t.boolean  "vote_flag"
+    t.string   "vote_scope"
+    t.integer  "vote_weight"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "votes", ["votable_id", "votable_type", "vote_scope"], name: "index_votes_on_votable_id_and_votable_type_and_vote_scope"
+  add_index "votes", ["voter_id", "voter_type", "vote_scope"], name: "index_votes_on_voter_id_and_voter_type_and_vote_scope"
 
 end
