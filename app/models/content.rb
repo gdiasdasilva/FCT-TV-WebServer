@@ -14,4 +14,8 @@ class Content < ActiveRecord::Base
       where 'description LIKE ?', "%#{search}%"
     end
   end
+
+  def self.most_popular
+    self.order("cached_votes_score DESC")
+  end
 end

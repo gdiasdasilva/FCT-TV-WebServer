@@ -54,6 +54,12 @@ class ContentsController < ApplicationController
     redirect_to @content
   end
 
+  def popular
+    @contents = Content.order('cached_votes_up DESC').limit(5)
+  end
+
+  helper_method :popular
+
   def tagged
     if params[:tag].present?
       @contents = Content.tagged_with(params[:tag])

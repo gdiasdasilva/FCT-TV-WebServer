@@ -21,7 +21,7 @@
 	height: 150px;
 }
 
-#news .content-title a {
+#news .content-title a, .popular_title a {
 	color: black;
 }
 
@@ -41,4 +41,10 @@
 
 .hidden {
     display: none;
+}
+
+.likes_number
+{
+    color: darkgray;
+    font-style: italic;
 }

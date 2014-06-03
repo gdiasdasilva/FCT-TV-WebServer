@@ -34,18 +34,19 @@
 
   <% if user_signed_in? %>
       <% if current_user.liked? @content %>
-          <%= link_to "Não gosto", dislike_content_path(@content), method: :put %>
+          <%= link_to "Não gosto", dislike_content_path(@content), method: :put, remote: true %>
       <% else %>
-          <%= link_to "Gosto", like_content_path(@content), method: :put %>
+          <%= link_to "Gosto", like_content_path(@content), method: :put, remote: true %>
       <% end %>
       <span> · </span>
   <% end %>
-  
+
   <%= @content.get_likes.size %> pessoas gostaram disto
   <br>
+
   Tags:
   <% @content.tags.any? %>
-  <% @content.tags.each do |tag| %>
-  <%= link_to tag.name, tagged_url(:tag => tag.name) %>
-<% end %>
+      <% @content.tags.each do |tag| %>
+      <%= link_to tag.name, tagged_url(:tag => tag.name) %>
+  <% end %>
 </div>

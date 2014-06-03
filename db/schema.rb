@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140602232116) do
+ActiveRecord::Schema.define(version: 20140603111703) do
 
   create_table "categories", force: true do |t|
     t.string   "name"
@@ -31,7 +31,18 @@ ActiveRecord::Schema.define(version: 20140602232116) do
     t.datetime "updated_at"
     t.string   "user_id"
     t.string   "image"
+    t.integer  "cached_votes_total",    default: 0
+    t.integer  "cached_votes_score",    default: 0
+    t.integer  "cached_votes_up",       default: 0
+    t.integer  "cached_votes_down",     default: 0
+    t.integer  "cached_weighted_score", default: 0
   end
+
+  add_index "contents", ["cached_votes_down"], name: "index_contents_on_cached_votes_down"
+  add_index "contents", ["cached_votes_score"], name: "index_contents_on_cached_votes_score"
+  add_index "contents", ["cached_votes_total"], name: "index_contents_on_cached_votes_total"
+  add_index "contents", ["cached_votes_up"], name: "index_contents_on_cached_votes_up"
+  add_index "contents", ["cached_weighted_score"], name: "index_contents_on_cached_weighted_score"
 
   create_table "likes", force: true do |t|
     t.string   "liker_type"
