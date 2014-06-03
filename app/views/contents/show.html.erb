@@ -34,9 +34,9 @@
 
   <% if user_signed_in? %>
       <% if current_user.liked? @content %>
-          <%= link_to "Não gosto", dislike_content_path(@content), method: :put, remote: true %>
+          <%= link_to "Não gosto", dislike_content_path(@content), class: 'vote', method: :put %>
       <% else %>
-          <%= link_to "Gosto", like_content_path(@content), method: :put, remote: true %>
+          <%= link_to "Gosto", like_content_path(@content), class: 'vote', method: :put %>
       <% end %>
       <span> · </span>
   <% end %>

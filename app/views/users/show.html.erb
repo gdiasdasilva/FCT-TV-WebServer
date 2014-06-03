@@ -15,7 +15,7 @@
   <%= @user.email %>
 </p>
 
-<h3>Conteúdos</h3>
+<h3>Meus conteúdos</h3>
 
 <% @user.contents.order('created_at DESC').each do |content| %>
 
@@ -38,16 +38,13 @@
                     <p><%= link_to 'Apagar publicação', content, method: :delete, data: { confirm: 'Tem a certeza?' } %></p>
                 <% else %>
                     <p><%= link_to 'Reportar publicação' %></p>
-                 <% end %>
+                <% end %>
             <% end %>
           </div>
         </div>
       </div>
     </div>
 <% end %>
-
-<%= link_to 'Back', users_path %>
-
 
 
 

@@ -2,6 +2,9 @@
 <hr>
 
 <% popular.each do |c| %>
-    <h5 class="popular_title"><%= link_to c.title, c %><span class="likes_number"> · <%= c.get_likes.size %> utilizadores gostam disto</span></h5>
-    <hr>
+    <% unless c.get_likes.size == 0 %>
+        <h5 class="popular_title"><%= link_to c.title, c %>
+          <span class="likes_number"> · <%= c.get_likes.size %> utilizadores gostam disto</span></h5>
+        <hr>
+    <% end %>
 <% end %>
