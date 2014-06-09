@@ -5,13 +5,12 @@ class ContentsController < ApplicationController
   # GET /contents
   # GET /contents.json
   def index
-    #@contents = Content.all
-
-    #if params[:search]
-     # @contents = Content.search(params[:search]).order("created_at DESC")
-   # else
       @contents = Content.all.order('created_at DESC')
-   # end
+
+      respond_to do |format|
+        format.html # index.html.erb
+        format.json { render json: @contents }
+      end
   end
 
   def get_events
