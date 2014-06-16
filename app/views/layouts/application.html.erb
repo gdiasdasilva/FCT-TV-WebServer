@@ -76,7 +76,7 @@
         </ul>
       </li>
       <li><%= link_to('Agenda', calendar_path) %></li>
-      <li><a href="#">Ementas</a></li>
+      <li><%= link_to 'Ementa', "#ementaModal", data: {toggle: "modal"} %></li>
     </ul>
   </div>
 
@@ -93,6 +93,28 @@
       <li><a href=" http://www.fct.unl.pt/">FCT-UNL</a></li>
     </ul>
   </div>
+
+  <div class="modal fade" id="ementaModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title" id="myModalLabel">Ementa</h4>
+        </div>
+        <div class="modal-body">
+          <div id="ementa">
+              <p><strong>Sopa:</strong> Caldo Verde</p>
+              <p><strong>Prato Principal:</strong> Arroz de Pato</p>
+              <p><strong>Dieta:</strong> Peixe cozido com batatas fritas</p>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </div>
 
 </body>
