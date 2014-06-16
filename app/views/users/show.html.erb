@@ -34,7 +34,7 @@
           </div>
           <div class="modal-body">
 
-            <% unless current_user.blank? %>
+            <% if not(current_user.blank?) %>
                 <% if content.presence_in(User.find(current_user).contents) %>
                     <div class="row">
                       <div class="col-md-4"><i class="glyphicon glyphicon-eye-open"></i></div>
@@ -58,6 +58,13 @@
                       <div class="col-md-6"><%= link_to 'Reportar publicação' %></div>
                     </div>
                 <% end %>
+            <% else %>
+                <div class="row">
+                  <div class="col-md-12"><i class="glyphicon glyphicon-eye-open"></i></div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12"><%= link_to 'Ver', content_path(content) %></div>
+                </div>
             <% end %>
 
           </div>
