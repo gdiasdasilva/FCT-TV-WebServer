@@ -6,7 +6,7 @@
       <% @category.contents.order('created_at DESC').each do |content| %>
           <div class="content-container">
             <div class="content-title">
-              <h4><%= link_to truncate(content.title, length: 80, omission: '... '), content %></h4>
+              <h4><%= link_to truncate(content.title, length: 70, omission: '... '), content %></h4>
             </div>
             <div class="content-image">
               <%= image_tag(content.image.url(:thumb)) %>

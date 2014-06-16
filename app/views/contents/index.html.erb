@@ -12,6 +12,10 @@
             <span><a href="<%= category_path(content.category_id) %>"><%= get_category(content.category_id) %></a></span>
             <span> · </span>
             <span id="pub_date"><%= time_ago_in_words(content.created_at) %></span>
+            <% if not(content.video.blank?) %>
+                <span> · </span>
+                <span><i class="glyphicon glyphicon-facetime-video"></i></span>
+            <% end %>
           </div>
           <div class="content-description">
             <p>

@@ -44,17 +44,6 @@ ActiveRecord::Schema.define(version: 20140603111703) do
   add_index "contents", ["cached_votes_up"], name: "index_contents_on_cached_votes_up"
   add_index "contents", ["cached_weighted_score"], name: "index_contents_on_cached_weighted_score"
 
-  create_table "likes", force: true do |t|
-    t.string   "liker_type"
-    t.integer  "liker_id"
-    t.string   "likeable_type"
-    t.integer  "likeable_id"
-    t.datetime "created_at"
-  end
-
-  add_index "likes", ["likeable_id", "likeable_type"], name: "fk_likeables"
-  add_index "likes", ["liker_id", "liker_type"], name: "fk_likes"
-
   create_table "taggings", force: true do |t|
     t.integer  "tag_id"
     t.integer  "taggable_id"

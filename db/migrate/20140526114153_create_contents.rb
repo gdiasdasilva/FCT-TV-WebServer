@@ -1,6 +1,5 @@
 class CreateContents < ActiveRecord::Migration
   def change
-    drop_table :contents
     create_table :contents do |t|
       t.string :title
       t.text :description

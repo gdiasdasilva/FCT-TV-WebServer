@@ -44,13 +44,23 @@ class ContentsController < ApplicationController
   def like
     @content = Content.find(params[:id])
     @content.liked_by current_user
-    redirect_to @content
+
+    if request.xhr?
+      render json: { count: @content.get_likes.size, id: params[:id] }
+    else
+      redirect_to @content
+    end
   end
 
   def dislike
     @content = Content.find(params[:id])
     @content.disliked_by current_user
-    redirect_to @content
+
+    if request.xhr?
+      render json: { count: @content.get_likes.size, id: params[:id] }
+    else
+      redirect_to @content
+    end
   end
 
   def popular

@@ -46,5 +46,12 @@
 .likes_number
 {
     color: darkgray;
-    font-style: italic;
+}
+
+.popular_title {
+    line-height: 25px;
+}
+
+.content-container .glyphicon {
+    top: 2px;
 }
