@@ -2,6 +2,10 @@ div {
 	 /*border: 1px solid black; */
 }
 
+body {
+    background-image:url('crossword.png');
+}
+
 #nav-bar, #content-box {
 	width: 700px;
 	margin: 0 auto;

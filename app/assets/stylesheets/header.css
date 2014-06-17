@@ -6,19 +6,19 @@
 	float: left;
 }
 
-#logout, #upload, #menuButton, #search {
+#logout, #upload, #menuButton, #search_box {
 	float: right;
 }
 
-#search {
+#search_box {
 	width: 20%;
 }
 
-#upload, #menuButton, #logout, #search {
+#upload, #menuButton, #logout, #search_box {
 	border: none;
 }
 
-#search input {
+#search_box input {
 	width: 100%;
 	float: left;
 }

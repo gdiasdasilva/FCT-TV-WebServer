@@ -51,8 +51,10 @@
           <i class="glyphicon glyphicon-home"></i>
       <% end %>
     </div>
-    <div id="search">
-      <input type="text" class="form-control" placeholder="Pesquisa">
+    <div id="search_box">
+      <%= form_tag(contents_path, :method => "get", id: "lol") do %>
+          <%= text_field_tag :search, params[:search], placeholder: "Pesquisa", class: 'form-control', type: 'text' %>
+      <% end %>
     </div>
     <div id="upload">
       <%= link_to new_content_path, class: "btn btn-primary" do %>
