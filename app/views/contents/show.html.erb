@@ -38,14 +38,14 @@
       <% else %>
           <%= link_to raw('<i class="glyphicon glyphicon-star-empty"></i>'), like_content_path(@content), remote: true, class: 'vote', method: :put, data: { toggle_text: '<i class="glyphicon glyphicon-star"></i>', toggle_href: dislike_content_path(@content), id: @content.id } %>
       <% end %>
-      <span> · </span>
+  <% else %>
+      <i class="glyphicon glyphicon-star"></i>
   <% end %>
 
   <span class="votes-count" data-id="<%= @content.id %>">
     <%= @content.get_likes.size %>
   </span>
-  utilizadores favoritaram este conteúdo
-  <br>
+  <span> · </span>
 
   Tags:
   <% @content.tags.any? %>

@@ -10,8 +10,20 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
-
   end
+
+  def user_total_likes()
+    @user = User.find(params[:id])
+    @total = 0
+
+    @user.contents.each do |c|
+      @total = @total + c.get_likes.size
+    end
+
+    return @total
+  end
+
+  helper_method :user_total_likes
 
   def create
     @user = User.new(user_params)

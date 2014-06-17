@@ -11,17 +11,24 @@
 </p>
 
 <p>
+  <strong>Popularidade: </strong>
+  <%= user_total_likes %> <i class="glyphicon glyphicon-star"></i>
+</p>
+
+<p>
   <strong>Email:</strong>
   <%= @user.email %>
 </p>
 
 <br>
-<h3>Meus conteúdos</h3>
+<h3>Conteúdos inseridos</h3>
 <hr>
 
 <% @user.contents.order('created_at DESC').each do |content| %>
 
-    <h5 class="user_content"><%= link_to content.title, "#" + content.id.to_s + "modal", data: {toggle: "modal"} %></h5>
+    <h5 class="user_content"><%= link_to content.title, "#" + content.id.to_s + "modal", data: {toggle: "modal"} %>
+      <span class="likes_number"> · <%= content.get_likes.size %> <i class="glyphicon glyphicon-star"></i></span>
+    </h5>
     <hr>
 
     <!-- Modal -->

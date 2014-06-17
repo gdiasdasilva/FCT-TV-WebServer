@@ -3,6 +3,6 @@
 
 <% popular.each do |c| %>
         <h5 class="popular_title"><%= link_to c.title, c %>
-          <span class="likes_number"> · <%= c.get_likes.size %> <i class="glyphicon glyphicon-star"></i></span></h5>
+          <span class="likes_number"><i class="glyphicon glyphicon-star"></i> <%= c.get_likes.size %></span></h5>
         <hr>
 <% end %>

@@ -16,6 +16,23 @@
                 <span> · </span>
                 <span><i class="glyphicon glyphicon-facetime-video"></i></span>
             <% end %>
+
+            <span> · </span>
+
+            <% if user_signed_in? %>
+                <% if current_user.liked? content %>
+                    <%= link_to raw('<i class="glyphicon glyphicon-star"></i>'), dislike_content_path(content), remote: true,class: 'vote', method: :put, data: { toggle_text: '<i class="glyphicon glyphicon-star-empty"></i>', toggle_href: like_content_path(content), id: content.id } %>
+                <% else %>
+                    <%= link_to raw('<i class="glyphicon glyphicon-star-empty"></i>'), like_content_path(content), remote: true, class: 'vote', method: :put, data: { toggle_text: '<i class="glyphicon glyphicon-star"></i>', toggle_href: dislike_content_path(content), id: content.id } %>
+                <% end %>
+            <% else %>
+                <i class="glyphicon glyphicon-star"></i>
+            <% end %>
+
+            <span class="votes-count" data-id="<%= content.id %>">
+                    <%= content.get_likes.size %>
+            </span>
+
           </div>
           <div class="content-description">
             <p>
