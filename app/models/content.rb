@@ -10,7 +10,7 @@ class Content < ActiveRecord::Base
   mount_uploader :image, ImageUploader
 
   def self.search(query)
-    where("title like ?", "%#{query}%")
+    where("title LIKE ? OR description LIKE ?", "%#{query}%", "%#{query}%")
   end
 
   def self.most_popular

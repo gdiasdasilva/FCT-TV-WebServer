@@ -18,10 +18,6 @@ class ContentsController < ApplicationController
     end
   end
 
-  def search
-    @contents = Content.search params[:search]
-  end
-
   def get_events
     @contents = Content.find_by_category_id(1)
   end
