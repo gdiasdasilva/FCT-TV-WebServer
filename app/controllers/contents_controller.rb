@@ -14,7 +14,7 @@ class ContentsController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @contents }
+      format.json { render json: @contents, :only => [:id, :title, :description, :category_id, :video, :event_datetime, :event_site, :limit_date, :image] }
     end
   end
 
