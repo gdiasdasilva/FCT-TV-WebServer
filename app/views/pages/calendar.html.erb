@@ -40,10 +40,5 @@
 <%= javascript_tag do %>
     window.contentsURL = "<%=j contents_url %>";
     var x = <%=raw Content.limit(2).to_json %>;
-    var events = '{ '
-    for(var i = 0; i < x.length; i++)
-    {
-    events += '"' + x[i].event_date + '": { "number": 15, "badgeClass": "badge-error" }';
-    }
-    events += ' }'
+    alert(x);
 <% end %>

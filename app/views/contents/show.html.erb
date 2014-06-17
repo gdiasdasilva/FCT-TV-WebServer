@@ -34,9 +34,9 @@
 
   <% if user_signed_in? %>
       <% if current_user.liked? @content %>
-          <%= link_to content_tag(:span, '', :class => "glyphicon glyphicon-star"), dislike_content_path(@content), class: 'vote', method: :put, data: { toggle_text: 'Like', toggle_href: like_content_path(@content), id: @content.id } %>
+          <%= link_to raw('<i class="glyphicon glyphicon-star"></i>'), dislike_content_path(@content), remote: true,class: 'vote', method: :put, data: { toggle_text: '<i class="glyphicon glyphicon-star-empty"></i>', toggle_href: like_content_path(@content), id: @content.id } %>
       <% else %>
-          <%= link_to content_tag(:span, '', :class => "glyphicon glyphicon-star-empty"), like_content_path(@content), class: 'vote', method: :put, data: { toggle_text: 'Dislike', toggle_href: dislike_content_path(@content), id: @content.id } %>
+          <%= link_to raw('<i class="glyphicon glyphicon-star-empty"></i>'), like_content_path(@content), remote: true, class: 'vote', method: :put, data: { toggle_text: '<i class="glyphicon glyphicon-star"></i>', toggle_href: dislike_content_path(@content), id: @content.id } %>
       <% end %>
       <span> · </span>
   <% end %>
@@ -44,7 +44,7 @@
   <span class="votes-count" data-id="<%= @content.id %>">
     <%= @content.get_likes.size %>
   </span>
-  utilizadores marcaram este conteúdo
+  utilizadores favoritaram este conteúdo
   <br>
 
   Tags:
