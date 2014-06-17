@@ -16,6 +16,11 @@
 </p>
 
 <p>
+  <strong>Nº de favoritos: </strong>
+  <%= @user.find_liked_items.size %>
+</p>
+
+<p>
   <strong>Email:</strong>
   <%= @user.email %>
 </p>
