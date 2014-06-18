@@ -5,7 +5,7 @@ class Content < ActiveRecord::Base
   acts_as_votable
   validates :category_id, :presence => true
   validates :title, :presence => true
-  validates :description, :presence => true
+  #validates :description, :presence => true
 
   mount_uploader :image, ImageUploader
 
