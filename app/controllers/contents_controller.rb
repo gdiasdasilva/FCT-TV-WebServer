@@ -14,7 +14,8 @@ class ContentsController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @contents, :only => [:id, :title, :description, :category_id, :video, :event_datetime, :event_site, :limit_date, :image] }
+      format.json { render json: @contents, :only => [:id, :title, :description, :category_id, :video, :event_datetime,
+                                                      :event_site, :limit_date, :image, :user_id, :created_at] }
     end
   end
 
@@ -85,15 +86,18 @@ class ContentsController < ApplicationController
   def mark_content
     @user = User.find(current_user.id)
     @content = Content.find(params[:id])
-    @user.read_later(@content)
+    begin
+      @user.read_later(@content)
+    rescue
+    end
     redirect_to readlater_path
   end
 
   def unmark
-    @user = User.find(current_user.id)
-    @content = Content.find(params[:id])
-    @user.markings.destroy (@content)
-    redirect_to readlater_path
+      @user = User.find(current_user.id)
+      @content = Content.find(params[:id])
+      @user.markings.destroy (@content)
+      redirect_to readlater_path
   end
 
   # GET /contents/1/edit

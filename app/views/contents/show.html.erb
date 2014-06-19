@@ -34,7 +34,7 @@
 
   <% if user_signed_in? %>
       <% if current_user.liked? @content %>
-          <%= link_to raw('<i class="glyphicon glyphicon-star"></i>'), dislike_content_path(@content), remote: true,class: 'vote', method: :put, data: { toggle_text: '<i class="glyphicon glyphicon-star-empty"></i>', toggle_href: like_content_path(@content), id: @content.id } %>
+          <%= link_to raw('<i class="glyphicon glyphicon-star"></i>'), dislike_content_path(@content), remote: true, class: 'vote', method: :put, data: { toggle_text: '<i class="glyphicon glyphicon-star-empty"></i>', toggle_href: like_content_path(@content), id: @content.id } %>
       <% else %>
           <%= link_to raw('<i class="glyphicon glyphicon-star-empty"></i>'), like_content_path(@content), remote: true, class: 'vote', method: :put, data: { toggle_text: '<i class="glyphicon glyphicon-star"></i>', toggle_href: dislike_content_path(@content), id: @content.id } %>
       <% end %>
@@ -53,6 +53,5 @@
       <%= link_to tag.name, tagged_url(:tag => tag.name) %>
   <% end %>
 </div>
-
 
 <%= link_to "Marcar", mark_content_path(@content), method: :put %>
