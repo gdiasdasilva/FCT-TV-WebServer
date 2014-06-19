@@ -42,7 +42,7 @@
     <% if user_signed_in? %>
         <div id="menuButton" class="btn-group">
           <%= link_to user_path(User.find(current_user)), class: "btn btn-default" do %>
-              <i class="glyphicon glyphicon-user"></i>
+              <i class="glyphicon glyphicon-user"></i> <%= current_user.name %>
           <% end %>
         </div>
     <% end %>
