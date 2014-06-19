@@ -1,0 +1,15 @@
+<h1>Ler mais tarde</h1>
+<hr>
+
+<% if (current_user.marked_contents.length > 0) %>
+    <% current_user.marked_contents.each do |c| %>
+        <span class="readlater_title"><%= link_to Content.find(c.content_id).title, Content.find(c.content_id) %></span>
+        <span> · </span><%= link_to raw("<i class='glyphicon glyphicon-ok'></i>"), unmark_content_path(Content.find(c.content_id)), method: :put %>
+        <hr>
+    <% end %>
+<% else %>
+    <div class="alert alert-success">
+        Não tem conteúdos por ler!
+    </div>
+    <hr>
+<% end %>

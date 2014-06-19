@@ -66,7 +66,7 @@
   <div id="nav-bar">
     <ul id="menu">
       <li><%= link_to('Mais populares', popular_path) %></li>
-      <li><a href="#">Ler mais tarde</a></li>
+      <% if current_user %><li><%= link_to 'Ler mais tarde', readlater_path %></li><% end %>
       <li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Categorias</a>
         <ul class="dropdown-menu" role="menu">

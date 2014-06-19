@@ -21,7 +21,7 @@
 	height: 150px;
 }
 
-#news .content-title a, .popular_title a {
+#news .content-title a, .popular_title a, .readlater_title a {
 	color: black;
 }
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140603111703) do
+ActiveRecord::Schema.define(version: 20140619131233) do
 
   create_table "categories", force: true do |t|
     t.string   "name"
@@ -43,6 +43,13 @@ ActiveRecord::Schema.define(version: 20140603111703) do
   add_index "contents", ["cached_votes_total"], name: "index_contents_on_cached_votes_total"
   add_index "contents", ["cached_votes_up"], name: "index_contents_on_cached_votes_up"
   add_index "contents", ["cached_weighted_score"], name: "index_contents_on_cached_weighted_score"
+
+  create_table "marked_contents", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "content_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "taggings", force: true do |t|
     t.integer  "tag_id"

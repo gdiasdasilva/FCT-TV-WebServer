@@ -1,6 +1,8 @@
 class Content < ActiveRecord::Base
   belongs_to :category
   belongs_to :user
+  has_many :marked_contents
+  has_many :marked_by,  class_name: 'User', through: :marked_contents
   acts_as_taggable_on :tags
   acts_as_votable
   validates :category_id, :presence => true

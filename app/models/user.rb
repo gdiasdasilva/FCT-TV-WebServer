@@ -7,4 +7,10 @@ class User < ActiveRecord::Base
   acts_as_voter
 
   has_many :contents
+  has_many :marked_contents
+  has_many :markings, class_name: 'Content', through: :marked_contents, source: :content
+
+  def read_later(content)
+    markings << content
+  end
 end

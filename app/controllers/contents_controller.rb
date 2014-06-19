@@ -82,6 +82,20 @@ class ContentsController < ApplicationController
     end
   end
 
+  def mark_content
+    @user = User.find(current_user.id)
+    @content = Content.find(params[:id])
+    @user.read_later(@content)
+    redirect_to readlater_path
+  end
+
+  def unmark
+    @user = User.find(current_user.id)
+    @content = Content.find(params[:id])
+    @user.markings.destroy (@content)
+    redirect_to readlater_path
+  end
+
   # GET /contents/1/edit
   def edit
   end

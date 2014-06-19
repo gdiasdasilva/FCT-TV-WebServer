@@ -8,6 +8,8 @@ Rails.application.routes.draw do
     member do
       put "like", to: "contents#like"
       put "dislike", to: "contents#dislike"
+      put "mark", to: "contents#mark_content"
+      put "unmark", to: "contents#unmark"
     end
   end
 
@@ -17,9 +19,9 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
    root 'contents#index'
    get '/calendar' => 'pages#calendar'
+   get '/readlater' => 'pages#readlater'
    get '/popular' => 'contents#popular'
    get 'tagged' => 'contents#tagged', :as => 'tagged'
-
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

@@ -53,3 +53,6 @@
       <%= link_to tag.name, tagged_url(:tag => tag.name) %>
   <% end %>
 </div>
+
+
+<%= link_to "Marcar", mark_content_path(@content), method: :put %>
