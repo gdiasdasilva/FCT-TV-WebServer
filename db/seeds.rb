@@ -29,7 +29,7 @@ noticias.each do |n|
   else
     description = n["description"][0]
   end
-  Content.create!(user_id: 1, category_id: 2, title: n["title"][0], description: description)
+  Content.create!(user_id: 1, category_id: 2, title: n["title"], description: description, created_at: n["date"])
 end
 
 provas.each do |p|
