@@ -32,6 +32,8 @@ gem 'mini_magick'
 
 gem 'acts_as_votable', '~> 0.9.0'
 
+gem 'nilify_blanks'
+
 group :development do
   gem 'better_errors'
 end
