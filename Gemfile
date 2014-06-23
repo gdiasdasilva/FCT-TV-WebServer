@@ -34,6 +34,8 @@ gem 'acts_as_votable', '~> 0.9.0'
 
 gem 'nilify_blanks'
 
+gem 'jquery-ui-rails'
+
 group :development do
   gem 'better_errors'
 end

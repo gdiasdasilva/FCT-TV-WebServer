@@ -1,1 +1,17 @@
-Calendário
+<div id="calendar_agenda">
+    <h2 id="month">
+      <%= link_to "<", date: @date.prev_month %>
+      <%= @date.strftime("%B %Y") %>
+      <%= link_to ">", date: @date.next_month %>
+    </h2>
+    <%= calendar @date do |date| %>
+        <%= date.day %>
+        <% if @contents_by_date[date] %>
+            <ul>
+              <% @contents_by_date[date].each do |c| %>
+                  <li><%= link_to truncate(c.title), c %></li>
+              <% end %>
+            </ul>
+        <% end %>
+    <% end %>
+</div>

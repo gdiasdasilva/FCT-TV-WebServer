@@ -13,6 +13,7 @@
  *= require bootstrap
  *= require select2
  *= require select2-bootstrap
+ *= require jquery.ui.datepicker
  *= require_tree .
  *= require_self
  */
@@ -24,4 +25,55 @@
     url('../assets/glyphicons-halflings-regular.woff') format('woff'),
     url('../assets/glyphicons-halflings-regular.ttf') format('truetype'),
     url('../assets/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+}
+
+.calendar {
+    border-collapse: collapse;
+    width: 100%;
+    table-layout: fixed;
+
+}
+
+#calendar_agenda td, #calendar_agenda th {
+    font-family: "Lucida Grande", arial, helvetica, sans-serif;
+    font-size: 10px;
+    padding: 6px;
+    border: 1px solid #999;
+    overflow: hidden;
+}
+
+#calendar_agenda th {
+    background: #DDD;
+    color: #666;
+    text-align: center;
+    width: 14.2857142857143%;
+}
+
+#calendar_agenda td {
+    background: #FFF;
+    color: #777;
+    height: 80px;
+    vertical-align: top;
+    font-size: 16px;
+}
+
+#calendar_agenda .notmonth, #calendar_agenda .notmonth a { color: #CCC; }
+#calendar_agenda .today { background-color: #D7F2FF; }
+
+#calendar_agenda #month {
+    margin: 0;
+    padding-bottom: 10px;
+    text-align: center;
+    font-size: 22px;
+}
+
+#calendar_agenda #month a {
+    text-decoration: none;
+    padding: 0 10px;
+    color: #999;
+}
+
+#calendar_agenda ul {
+    font-size: 11px;
+    padding-left: 20px;
 }
