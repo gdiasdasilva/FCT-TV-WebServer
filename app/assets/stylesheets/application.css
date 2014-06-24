@@ -31,7 +31,6 @@
     border-collapse: collapse;
     width: 100%;
     table-layout: fixed;
-
 }
 
 #calendar_agenda td, #calendar_agenda th {
