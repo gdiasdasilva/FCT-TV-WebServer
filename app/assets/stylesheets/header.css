@@ -4,10 +4,13 @@
 
 #logo {
 	float: left;
+    position: fixed;
+
 }
 
 #logo img {
     width: 150px;
+
 }
 
 #logout, #upload, #menuButton, #search_box {
