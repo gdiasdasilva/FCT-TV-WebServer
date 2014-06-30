@@ -23,4 +23,12 @@ class Content < ActiveRecord::Base
   def self.most_popular
     self.order("cached_votes_score DESC")
   end
+
+  def tv_img_url
+    image.url(:tv)
+  end
+
+  def img_url
+    image.url()
+  end
 end
