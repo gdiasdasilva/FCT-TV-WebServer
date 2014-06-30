@@ -5,6 +5,8 @@
 # Rails creates this event, when the link_to(remote: true)
 # successfully executes
 
+jQuery -> $('#content_limit_date').datepicker format: 'dd-mm-yyyy', language: 'pt', defaultDate: $('#content_limit_date').val()
+
 $(document).on 'ajax:success', 'a.vote', (status,data,xhr)->
   # the `data` parameter is the decoded JSON object
   $(".votes-count[data-id=#{data.id}]").text data.count
