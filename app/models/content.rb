@@ -3,7 +3,7 @@ class Content < ActiveRecord::Base
   belongs_to :user
 
   has_many :marked_contents
-  has_many :marked_by,  class_name: 'User', through: :marked_contents
+  has_many :marked_by,  class_name: 'User', through: :marked_contents, source: :user
 
   acts_as_taggable_on :tags
   acts_as_votable

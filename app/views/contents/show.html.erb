@@ -54,4 +54,9 @@
   <% end %>
 </div>
 
-<%= link_to "Marcar", mark_content_path(@content), method: :put %>
+<% unless(current_user.presence_in(@content.marked_by)) %>
+    <%= link_to "Ler mais tarde", mark_content_path(@content), method: :put %>
+<% end %>
+
+
+
