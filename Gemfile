@@ -38,6 +38,8 @@ gem 'jquery-ui-rails'
 
 gem 'acts_as_list'
 
+gem 'bootstrap_form'
+
 group :development do
   gem 'better_errors'
 end

@@ -1,6 +1,6 @@
-<%= form_for(@playlist_item) do |f| %>
-    <div class="form-group">
-      <%= collection_select(:playlist_item, :content_id, Content.all, :id, :title, prompt: false, class: "form-control")%>
+<%= bootstrap_form_for(@playlist_item) do |f| %>
+    <div class="field">
+      <%= f.collection_select(:content_id, Content.all, :id, :title, prompt: false)%>
     </div>
 
     <div class="actions">

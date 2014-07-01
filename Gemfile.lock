@@ -39,6 +39,7 @@ GEM
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
     bluecloth (2.2.0)
+    bootstrap_form (2.1.1)
     builder (3.2.2)
     carrierwave (0.10.0)
       activemodel (>= 3.2.0)
@@ -158,6 +159,7 @@ DEPENDENCIES
   acts_as_votable (~> 0.9.0)
   better_errors
   bluecloth
+  bootstrap_form
   carrierwave
   coffee-rails (~> 4.0.0)
   devise
