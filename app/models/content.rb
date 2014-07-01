@@ -5,6 +5,9 @@ class Content < ActiveRecord::Base
   has_many :marked_contents
   has_many :marked_by,  class_name: 'User', through: :marked_contents, source: :user
 
+  has_many :playlist_items
+  has_many :playlists, through: :playlist_items
+
   acts_as_taggable_on :tags
   acts_as_votable
 

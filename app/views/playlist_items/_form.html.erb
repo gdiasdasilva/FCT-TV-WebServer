@@ -1,0 +1,10 @@
+<%= form_for(@playlist_item) do |f| %>
+    <div class="form-group">
+      <%= collection_select(:playlist_item, :content_id, Content.all, :id, :title, prompt: false, class: "form-control")%>
+    </div>
+
+    <div class="actions">
+      <br>
+      <%= f.submit "Adicionar conteúdo à lista", class: "btn btn-default" %>
+    </div>
+<% end %>

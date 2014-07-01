@@ -12,7 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require jquery.ui.datepicker
+//= require jquery.ui.all
 //= require bootstrap
 //= require select2
 // require turbolinks

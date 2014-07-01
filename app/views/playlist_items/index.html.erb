@@ -1,0 +1,17 @@
+<h2>Lista de reprodução:</h2>
+<hr>
+
+<ul id="playlist" data-update-url="<%= sort_playlist_items_url %>">
+  <% @playlist_items.each do |playlist_item| %>
+      <%= content_tag_for(:li, playlist_item, class: "ui-state-default") do %>
+          <%= playlist_item.position %> : <%= truncate(Content.find(playlist_item.content_id).title, :length => 70) %>
+      <% end %>
+  <% end %>
+</ul>
+
+<br>
+
+<h4>Adicionar conteúdo à lista</h4>
+<br>
+
+<%= render 'form' %>

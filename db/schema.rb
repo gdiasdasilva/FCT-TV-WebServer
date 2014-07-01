@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140619131233) do
+ActiveRecord::Schema.define(version: 20140701223928) do
 
   create_table "categories", force: true do |t|
     t.string   "name"
@@ -47,6 +47,20 @@ ActiveRecord::Schema.define(version: 20140619131233) do
   create_table "marked_contents", force: true do |t|
     t.integer  "user_id"
     t.integer  "content_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "playlist_items", force: true do |t|
+    t.integer  "content_id"
+    t.integer  "playlist_id"
+    t.integer  "position"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "playlists", force: true do |t|
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

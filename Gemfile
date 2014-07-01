@@ -36,6 +36,8 @@ gem 'nilify_blanks'
 
 gem 'jquery-ui-rails'
 
+gem 'acts_as_list'
+
 group :development do
   gem 'better_errors'
 end
