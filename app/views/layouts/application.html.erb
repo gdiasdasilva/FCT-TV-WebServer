@@ -34,7 +34,7 @@
       </button>
       <ul class="dropdown-menu right" role="menu">
         <% if user_signed_in? %><li><%= link_to 'Meus conteúdos', user_path(User.find(current_user)) %></li><% end %>
-        <li><a href="#">Mais info</a></li>
+        <li><%= link_to 'Sobre nós', info_path %></li>
         <li class="divider"></li>
         <li><a href="mailto:admin@campustv.pt?subject=Suporte FCT TV">Suporte</a></li>
       </ul>

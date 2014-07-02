@@ -14,4 +14,8 @@ class PagesController < ApplicationController
   def readlater
 
   end
+
+  def info
+
+  end
 end

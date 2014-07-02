@@ -26,6 +26,7 @@ Rails.application.routes.draw do
    get '/readlater' => 'pages#readlater'
    get '/popular' => 'contents#popular'
    get 'tagged' => 'contents#tagged', :as => 'tagged'
+   get '/info' => 'pages#info'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
