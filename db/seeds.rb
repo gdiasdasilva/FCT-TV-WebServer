@@ -78,3 +78,9 @@ Content.create!([
 ])
 
 Playlist.create(name: "Playlist")
+
+@contents = Content.all.order('created_at DESC').limit(10)
+
+@contents.each do |c|
+  PlaylistItem.create(content_id: c.id)
+end
