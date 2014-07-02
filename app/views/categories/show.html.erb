@@ -9,7 +9,21 @@
               <h4><%= link_to truncate(content.title, length: 70, omission: '... '), content %></h4>
             </div>
             <div class="content-image">
-              <%= image_tag(content.image.url(:thumb)) %>
+              <% if content.image.url(:thumb) == nil %>
+                  <% if content.category_id == 1 %>
+                      <%= image_tag('calendar.png') %>
+                  <% elsif content.category_id == 2 %>
+                      <%= image_tag('news.png') %>
+                  <% elsif content.category_id == 3 %>
+                      <%= image_tag('pedagogical.png') %>
+                  <% elsif content.category_id == 4 %>
+                      <%= image_tag('work.png') %>
+                  <% elsif content.category_id == 5 %>
+                      <%= image_tag('reports.png') %>
+                  <% end %>
+              <% else %>
+                  <%= image_tag(content.image.url(:thumb)) %>
+              <% end %>
             </div>
             <div class="content-text">
               <div class="content-type">

@@ -57,7 +57,7 @@ Category.create!([
  {name: "Notícias FCT"},
  {name: "Avisos Pedagógicos"},
  {name: "Investigação e Trabalho"},
- {name: "Reportagens"}
+ {name: "Diversos"}
 ])
 
 Content.create!([
