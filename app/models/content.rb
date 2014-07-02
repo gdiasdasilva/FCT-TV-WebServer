@@ -34,4 +34,8 @@ class Content < ActiveRecord::Base
   def img_url
     image.url()
   end
+
+  def iphone_url
+    image.url(:iphone)
+  end
 end

@@ -17,7 +17,7 @@ class ContentsController < ApplicationController
      # format.json { render json: @contents, :only => [:id, :title, :description, :category_id, :video, :event_datetime,
       #                                                :event_site, :limit_date, :image, :user_id, :created_at] }
       format.json { render json: @contents, :only => [:id, :title, :description, :category_id, :video, :event_datetime,
-                                                      :event_site, :limit_date], :methods => [:tv_img_url, :img_url] }
+                                                      :event_site, :limit_date], :methods => [:tv_img_url, :img_url, :iphone_url] }
     end
   end
 
