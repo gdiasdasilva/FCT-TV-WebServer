@@ -24,7 +24,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   process :resize_to_fit => [250, 500]
 
   version :tv do
-    process :resize_to_fit => [500, 500]
+    process :resize_to_fill => [500, 500]
   end
 
   version :iphone do
