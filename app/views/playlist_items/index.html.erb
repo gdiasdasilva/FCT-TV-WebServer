@@ -4,7 +4,7 @@
 <ul id="playlist" data-update-url="<%= sort_playlist_items_url %>">
   <% @playlist_items.each do |playlist_item| %>
       <%= content_tag_for(:li, playlist_item, class: "ui-state-default") do %>
-          <%= truncate(Content.find(playlist_item.content_id).title, :length => 70) %>
+          <%= playlist_item.position %> : <%= truncate(Content.find(playlist_item.content_id).title, :length => 70) %> <%= link_to raw('<i class="glyphicon glyphicon-remove"></i>'), playlist_item, method: :delete, data: { confirm: 'Tem a certeza?' } %>
       <% end %>
   <% end %>
 </ul>

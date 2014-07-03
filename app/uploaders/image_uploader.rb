@@ -21,10 +21,8 @@ class ImageUploader < CarrierWave::Uploader::Base
     %w(jpg jpeg gif png)
   end
 
-  process :resize_to_fit => [250, 500]
-
   version :tv do
-    process :resize_to_fill => [500, 500]
+    process :resize_to_fit => [1000, 500]
   end
 
   version :iphone do
@@ -34,6 +32,8 @@ class ImageUploader < CarrierWave::Uploader::Base
   version :thumb do
     process :resize_to_fill => [200,150]
   end
+
+  #process :resize_to_fit => [250, 500]
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
   # def default_url
