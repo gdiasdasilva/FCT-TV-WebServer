@@ -1,11 +1,7 @@
 FCT TV — Web Server
 =================
 
-##Authors
-
-* Gonçalo Dias da Silva
-* João Francisco Pinto
-* Rui Carvalho
+<img src="https://dl.dropboxusercontent.com/u/2937374/GitHub%20Images/Logo.png" width="200px">
 
 ##General info
 
@@ -23,3 +19,9 @@ Our solution has 4 different parts:
 The Web Server for FCT TV is like a social network. The students are the users and they can post information in the webpage that in the future will be shown in the TV's that are running the TV Client component.
 
 It was developed in Ruby on Rails 4 and offers features like tags, markdown publications, insertion of videos and images alongside the text, and many more.
+
+##Authors
+
+* Gonçalo Dias da Silva
+* João Francisco Pinto
+* Rui Carvalho
