@@ -1,7 +1,7 @@
 FCT TV — Web Server
 =================
 
-<img src="https://dl.dropboxusercontent.com/u/2937374/GitHub%20Images/Logo.png" width="200px">
+<img src="http://imgur.com/ZoDtdrI.png" width="200px">
 
 ## General info
 
